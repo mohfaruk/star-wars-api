@@ -25,11 +25,13 @@ interface PageProps {
 async function updateRecentCategory(formData: FormData) {
   'use server';
   
-  const selectedCategory = formData.get('category') as string;
+  const selectedCategory = formData.get('category') as string
+  const search = formData.get('search') as string ?? ''
+  const sort = formData.get('sort') as string ?? 'asc'
+
   if (!selectedCategory) return;
 
-  // Reuse your existing cookie logic
-  const cookieStore = await cookies();   // import { cookies } from 'next/headers' at top
+  const cookieStore = await cookies();
   let history: string[] = [];
 
   try {
@@ -54,6 +56,16 @@ async function updateRecentCategory(formData: FormData) {
     sameSite: 'lax',
     path: '/',
   });
+
+  // redirect with all search params so the page updates correctly
+  const { redirect } = await import('next/navigation')
+  const params = new URLSearchParams({
+    category: selectedCategory,
+    search,
+    sort,
+    page: '1'
+  })
+  redirect(`/?${params.toString()}`)
 }
 
 export default async function StarWarsPage({ searchParams }: PageProps) {

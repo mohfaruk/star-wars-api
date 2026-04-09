@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Star Wars Explorer
 
-## Getting Started
+A Next.js application that allows users to explore data from the Star Wars API (SWAPI) by category, with search, sorting, pagination, and recent history tracking.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Browse Star Wars data by category: People, Films, Planets, Starships, Vehicles, Species
+- Search across all fields within a category
+- Sort results alphabetically (ascending/descending)
+- Paginated results for improved performance and usability
+- Recent category history stored using cookies
+- Server-side rendering using Next.js App Router
+- Accessible and responsive UI
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Approach & Implementation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Data Fetching
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Data is fetched server-side using a utility function (fetchCategory) that retrieves data from the SWAPI based on the selected category.
 
-## Learn More
+### Filtering
 
-To learn more about Next.js, take a look at the following resources:
+Search functionality is implemented by:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Iterating over each item in the dataset
+- Checking if any field value includes the search term (case-insensitive)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Sorting
 
-## Deploy on Vercel
+Sorting is handled dynamically:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Uses name for most categories and title for films
+- Supports ascending and descending order
+- Uses localeCompare for consistent string comparison
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Pagination
+
+- Results are split into pages (10 items per page)
+- Current page is controlled via URL query parameters
+- Pagination links are dynamically generated
+
+## Future Improvements
+
+- Add loading and error states for API calls
+- Improve type safety for API responses
+- Add unit and integration tests
+- Enhance UI/UX with animations and better feedback
+- Implement caching for API responses
