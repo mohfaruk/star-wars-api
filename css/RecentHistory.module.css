@@ -1,0 +1,40 @@
+.container {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+.historyLink {
+  padding: 8px 16px;
+  background-color: #374151;
+  color: #fbbf24;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+}
+
+.historyLink:hover {
+  background-color: #fbbf24;
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+.historyLink:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.4);
+}

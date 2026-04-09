@@ -1,0 +1,40 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.sortButton {
+  padding: 10px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.sortButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.3);
+}
+
+.active {
+  background-color: #fbbf24;
+  color: #111827;
+}
+
+.inactive {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.inactive:hover {
+  background-color: #4b5563;
+}

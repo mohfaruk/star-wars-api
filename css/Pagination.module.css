@@ -1,0 +1,62 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.3);
+}
+
+.prevNext {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.prevNext:hover {
+  background-color: #4b5563;
+}
+
+.disabled {
+  background-color: #1f2937;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.pageButton {
+  padding: 12px 18px;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pageButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.3);
+}
+
+.activePage {
+  background-color: #fbbf24;
+  color: #111827;
+}
+
+.inactivePage {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.inactivePage:hover {
+  background-color: #4b5563;
+}
