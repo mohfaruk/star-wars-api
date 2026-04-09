@@ -46,3 +46,13 @@ Sorting is handled dynamically:
 - Add unit and integration tests
 - Enhance UI/UX with animations and better feedback
 - Implement caching for API responses
+
+## AI Usage
+
+AI tools were used selectively during development to support problem-solving and improve code quality.
+
+- AI was used to help identify and reason through edge cases, particularly when debugging issues related to category searching and state persistence using cookies. This helped resolve issues more efficiently after initial manual investigation.
+- Assistance was used to validate the implementation of storing and retrieving recent categories via cookies, ensuring a robust and reliable solution.
+- AI was used as a reference to review accessibility considerations and ensure alignment with WCAG 2.2 guidelines, particularly around semantic structure and ARIA attributes.
+
+All AI-assisted suggestions were reviewed, understood, and adapted where necessary to ensure correctness and maintainability.
